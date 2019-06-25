@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400&display=swap');
+
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #ecf0f1;
+}
+
+.app {
+    margin-top: 35vh;
+}
+
+span, a {
+    color: #2c3e50;
+}
+
+nav {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.pure-menu-link:hover {
+    background-color: #ecf0f1;
+}
+
+.navlist {
+    float: right;
+}
+
+.question {
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+#word {
+    font-size: 50px;
+    font-weight: 100;
+}
+
+#progress {
+    font-size: 15px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.answer {
+    display: flex;
+}
+
+.response {
+    margin-right: 5px;
+}
