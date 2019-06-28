@@ -1,95 +1,99 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Lato:100,300,400&display=swap');
 
-html {
+* {
     margin: 0px;
     padding: 0px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
 }
 
 body {
     background-color: #ecf0f1;
+    min-height: 100vh;
 }
 
-.app {
-    margin-top: 35vh;
-}
-
-span, a {
-    color: #2c3e50;
+::-webkit-scrollbar {
+    display: none;
 }
 
 nav {
-    margin: 20px;
-    font-size: 20px;
-    font-weight: 100;
-}
+    width: 100vw;
+    min-height: 46px;
+    height: 5vh;
 
-.form {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-}
+    position: relative;
+    background-color: #3498db;
+} .nav-content {
+    margin: 0 5vw;
+    width: 90%;
 
-.form label {
-    font-size: 30px;
-    color: #2c3e50;
-}
-
-form .langlabel {
-    font-size: 15px;
-}
-
-.language-input {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+} .nav-links {
     display: flex;
-}
-
-.lang2 {
-    margin-left: 50px;
-}   
-
-.language-input {
-    margin-top: 10px;
-    text-align: center;
-}
-.pure-menu-link:hover {
-    background-color: #ecf0f1;
-}
-
-.create {
-    margin-top: -20vh;
-}
-
-.navlist {
     float: right;
+
+    list-style-type: none;
+} .navtab {
+    margin-left: 2vw;
+    text-transform: uppercase;
+} .navtab, .hero {
+    text-decoration: none;
+    font-weight: 300;
+    color: #ecf0f1;
+    line-height: 5vh;
+} .hero {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
 }
 
-.question {
-    text-align: left;
-    font-family: 'Lato', sans-serif;
+.app {
+    width: 100vw;
+    min-height: 95vh;
 
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 
-    margin-bottom: 20px;
-}
-
-#word {
-    font-size: 50px;
-    font-weight: 100;
-}
-
-#progress {
-    font-size: 15px;
-    font-weight: 100;
-    font-style: italic;
-}
-
-.answer {
-    display: flex;
-}
-
-.input {
     text-align: center;
-}
-
-.response {
-    margin-right: 5px;
+} .test {
+    align-items: center;
+} .word {
+    font-size: 40px;
+    font-weight: 300;
+} .upload {
+    cursor: pointer;
+} .upload:hover, .mistake-button:hover, .submit-button:hover, .download-button:hover, .addrows-button:hover {
+    background-color: #3498db;
+    color: #ecf0f1;
+    transition: all .25s;
+} .input {
+    margin-top: 20px;
+} .progress {
+    font-size: 15px;
+    margin-top: -5px;
+    font-style: italic;
+} .response {
+    text-align: center;
+} .button {
+    border: 1px solid #3498db;
+    border-radius: 3px;
+    background-color: #ecf0f1;
+    padding: 10px 80px;
+    text-align: center;
+} .button:not(.response) {
+    cursor: pointer;
+} .answer {
+    display: flex;
+    margin-top: 2.5vh;
+} .submit-button {
+    padding: 10px 20px !important;
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 5px;
+} .mistake-list {
+    list-style-type: none;
+    font-size: 25px;
 }

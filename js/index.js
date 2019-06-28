@@ -1,9 +1,16 @@
-var question = document.querySelector('#word');
-var progress = document.querySelector('#progress');
+var question = document.querySelector('.word');
+var progress = document.querySelector('.progress');
 
 var input = document.querySelector('.input');
+var file = document.querySelector('.file-input');
 var response = document.querySelector('.response');
 var submit = document.querySelector('.submit');
+var mistake = document.querySelector('.mistake');
+
+var upload = document.querySelector('.upload');
+var submit_visible = document.querySelector('.submit-button');
+var mistakes_button = document.querySelector('.mistake-button');
+var mistakes_list = document.querySelector('.mistake-list');
 
 var form = document.querySelector('.form');
 var hero = document.querySelector('.hero');
@@ -13,17 +20,25 @@ var count = 1;
 
 var name;
 var list;
+var language;
 
-score = 0;
-mistakes = [];
+var score = 0;
+var mistakes = [];
 
 submit.addEventListener("click", function (event) {
     event.preventDefault();
     checkAnswer(list[i].answer);
 });
 
+mistake.addEventListener("click", function (event) {
+    event.preventDefault();
+    displayMistakes();
+});
+
 response.style.display = 'none';
-submit.style.display = 'none';
+submit_visible.style.display = 'none';
+mistakes_button.style.display = 'none';
+mistakes_list.style.display = 'none';
 
 question.innerHTML = 'Input a file containing the test';
 progress.style.display = 'none';
@@ -33,33 +48,12 @@ function start() {
     window.document.title = name + ' - Words 📚';
 
     response.style.display = 'block';
-    submit.style.display = 'block'; 
+    submit_visible.style.display = 'block';
     progress.style.display = 'block';
 
     input.style.display = 'none';
     askQuestion();
 }
-
-(function () {
-
-    function onChange(event) {
-        var reader = new FileReader();
-        reader.onload = onReaderLoad;
-        reader.readAsText(event.target.files[0]);
-    }
-
-    function onReaderLoad(event) {
-        var data = JSON.parse(event.target.result);
-        console.log('File ' + data.name + ' is loaded!');
-
-        name = data.name;
-        list = data.words;
-        start();
-    }
-
-    input.addEventListener('change', onChange);
-
-}());
 
 function askQuestion() {
     reset();
@@ -72,14 +66,16 @@ function checkAnswer(answer) {
     if (response.value == answer) {
         console.log("Correct answer was given.");
         score++;
-        
-        response.style.border = "1px solid #2ecc71";
+
+        response.readonly = true;
+        submit_visible.readonly = true;
+        response.style.border = "2px solid #2ecc71";
     } else {
         console.log("Incorrect answer was given. Correct answer was " + answer);
-        response.style.border = "1px solid #e74c3c";
+        response.style.border = "2px solid #e74c3c";
         mistakes.push(i);
     }
-    
+
     response.style.transition = ".2s";
     update();
 
@@ -93,6 +89,10 @@ function checkAnswer(answer) {
 function reset() {
     response.style.border = "1px solid #ccc";
     form.reset();
+
+    response.placeholder = language[0] + ' - ' + language[1];
+    response.readonly = false;
+    submit_visible.readonly = false;
 }
 
 function update() {
@@ -103,8 +103,23 @@ function update() {
 function endTest() {
     reset();
 
-    response.disabled = true;
-    submit.disabled = true;
+    response.style.display = 'none';
+    submit_visible.style.display = 'none';
+    mistakes_button.style.display = 'block';
+
     question.innerHTML = 'You got ' + score + ' right.';
-    progress.innerHTML = 'That is ' + (score / list.length) * 100 + '%';
+    progress.innerHTML = 'That is equal to ' + (score / list.length) * 100 + '%';
+}
+
+function displayMistakes() {
+    mistakes_list.style.display = 'block';
+
+    for (var j = 0; j < mistakes.length; j++) {
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode(list[mistakes[j]].question + ' = ' + list[mistakes[j]].answer);
+        node.appendChild(textnode);
+        mistakes_list.appendChild(node);
+    }
+
+    mistakes_button.style.display = 'none';
 }
