@@ -35,76 +35,115 @@ nav {
 
     position: relative;
     background-color: var(--theme);
-} .nav-content {
+}
+
+.nav-content {
     margin: 0 5vw;
     width: 90%;
 
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-} .nav-links {
+}
+
+.nav-links {
     display: flex;
     float: right;
 
     list-style-type: none;
-} .navtab {
+}
+
+.navtab {
     margin-left: 2vw;
     text-transform: uppercase;
-} .navtab, .hero {
+}
+
+.navtab,
+.hero {
     text-decoration: none;
     font-weight: 300;
     color: var(--white);
     line-height: 5vh;
-} .hero {
+}
+
+.hero {
     font-family: 'Permanent Marker', cursive;
     font-size: 30px;
 }
 
 .app {
     width: 100vw;
-    min-height: 95vh;
+    min-height: 92.5vh;
 
     display: flex;
     justify-content: center;
 
     text-align: center;
     position: relative;
-} .test {
+}
+
+.test {
     align-items: center;
-} .word {
+}
+
+.word {
     font-size: 40px;
     font-weight: 300;
-} .upload {
+}
+
+.upload {
     cursor: pointer;
-} .upload:hover, .mistake-button:hover, .submit-button:hover, .download-button:hover, .addrows-button:hover {
+}
+
+.upload:hover,
+.mistake-button:hover,
+.submit-button:hover,
+.download-button:hover,
+.addrows-button:hover {
     background-color: var(--theme);
     color: var(--primary);
     transition: all .25s;
-} .input {
+}
+
+.input {
     margin-top: 20px;
-} .progress {
+}
+
+.progress {
     font-size: 15px;
     margin-top: -5px;
     font-style: italic;
-} .response {
+}
+
+.response {
     text-align: center;
-} .button {
+}
+
+.button {
     border: 1px solid var(--theme);
     border-radius: 3px;
     background-color: var(--primary);
     padding: 10px 80px;
     text-align: center;
-} .button:not(.response) {
+}
+
+.button:not(.response) {
     cursor: pointer;
-} .answer {
+}
+
+.answer {
     display: flex;
     margin-top: 2.5vh;
-} .submit-button {
+}
+
+.submit-button {
     padding: 10px 20px !important;
     font-size: 25px;
     font-weight: 300;
     margin-left: 5px;
-} .mistake-list {
+}
+
+.mistake-list {
     list-style-type: none;
     font-size: 25px;
 }
@@ -121,4 +160,29 @@ nav {
     right: 50px;
     bottom: 50px;
     position: absolute;
+}
+
+footer {
+    width: 100vw;
+    min-height: 23px;
+    height: 2.5vh;
+
+    position: relative;
+    background-color: var(--theme);
+}
+
+.container {
+    margin: 0 5vw;
+    width: 90%;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+} .container, .right {
+    font-size: 15px;
+}.container a {
+    text-decoration: underline;
+    font-size: 15px;
+} .right {
+    float: right;
 }
