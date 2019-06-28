@@ -1,6 +1,7 @@
 var question = document.querySelector('#word');
 var progress = document.querySelector('#progress');
 
+var input = document.querySelector('.input');
 var response = document.querySelector('.response');
 var submit = document.querySelector('.submit');
 
@@ -16,24 +17,49 @@ var list;
 score = 0;
 mistakes = [];
 
-fetch('../json/test.json').then(response => {
-    return response.json();
-}).then(data => {
-    // Work with your JSON data here..
-    name = data.name;
-    list = data.words;
-    askQuestion(list);
-}).catch(err => {
-    // What do when the request fails
-    console.log('The request failed!');
-});
-
-submit.addEventListener("click", function () {
+submit.addEventListener("click", function (event) {
+    event.preventDefault();
     checkAnswer(list[i].answer);
 });
 
-hero.innerHTML = 'Words - ' + name;
-window.document.title = name + ' - Words 📚';
+response.style.display = 'none';
+submit.style.display = 'none';
+
+question.innerHTML = 'Input a file containing the test';
+progress.style.display = 'none';
+
+function start() {
+    hero.innerHTML = 'Words - ' + name;
+    window.document.title = name + ' - Words 📚';
+
+    response.style.display = 'block';
+    submit.style.display = 'block'; 
+    progress.style.display = 'block';
+
+    input.style.display = 'none';
+    askQuestion();
+}
+
+(function () {
+
+    function onChange(event) {
+        var reader = new FileReader();
+        reader.onload = onReaderLoad;
+        reader.readAsText(event.target.files[0]);
+    }
+
+    function onReaderLoad(event) {
+        var data = JSON.parse(event.target.result);
+        console.log('File ' + data.name + ' is loaded!');
+
+        name = data.name;
+        list = data.words;
+        start();
+    }
+
+    input.addEventListener('change', onChange);
+
+}());
 
 function askQuestion() {
     reset();
@@ -79,7 +105,6 @@ function endTest() {
 
     response.disabled = true;
     submit.disabled = true;
-    
     question.innerHTML = 'You got ' + score + ' right.';
     progress.innerHTML = 'That is ' + (score / list.length) * 100 + '%';
 }
