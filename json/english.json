@@ -1,0 +1,26 @@
+{
+    "name": "English numbers",
+    "languages": ["English", "Dutch"],
+    "words": [
+        {
+            "question": "one",
+            "answer": "een"
+        },
+        {
+            "question": "two",
+            "answer": "twee"
+        },
+        {
+            "question": "three",
+            "answer": "drie"
+        },
+        {
+            "question": "four",
+            "answer": "vier"
+        },
+        {
+            "question": "five",
+            "answer": "vijf"
+        }
+    ]
+}

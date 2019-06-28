@@ -1,0 +1,25 @@
+{
+    "name": "French numbers",
+    "languages": ["French", "English"],
+    "words": [{
+            "question": "une",
+            "answer": "one"
+        },
+        {
+            "question": "deux",
+            "answer": "two"
+        },
+        {
+            "question": "trois",
+            "answer": "three"
+        },
+        {
+            "question": "quatre",
+            "answer": "four"
+        },
+        {
+            "question": "cinq",
+            "answer": "five"
+        }
+    ]
+}
