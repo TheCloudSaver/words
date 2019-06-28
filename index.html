@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/iconfont.css" type="text/css">
 </head>
 
 <nav class="nav">
@@ -25,35 +26,43 @@
 
 <body>
     <div class="app test">
-            <form class="form">
-                <div class="question">
-                    <span class="word">Placeholder</span>
-                    <span class="progress">1/20</span>
-                </div>
+        <form class="form">
+            <div class="question">
+                <span class="word">Placeholder</span>
+                <span class="progress">1/20</span>
+            </div>
 
-                <div class="input">
-                    <label for="file" class="upload button">Upload file</label>
-                    <input class="file-input" id="file" accept=".json" type="file" style="display: none">
-                </div>
+            <div class="input">
+                <label for="file" class="upload button">Upload file</label>
+                <input class="file-input" id="file" accept=".json" type="file" style="display: none">
+            </div>
 
-                <div class="answer">
-                    <input class="response button" type="text" placeholder="Answer" required>
+            <div class="answer">
+                <input class="response button" type="text" placeholder="Answer" required>
 
-                    <label for="submit" class="submit-button button">Next</label>
-                    <button class="submit" id="submit" style="display: none">Next</button>
-                </div>
+                <label for="submit" class="submit-button button">Next</label>
+                <button class="submit" id="submit" style="display: none">Next</button>
+            </div>
 
-                <div class="mistakes">
-                    <label for="mistake-btn" class="mistake-button button">Want to view your mistakes?</label>
-                    <button class="mistake" id="mistake-btn" style="display: none">Want to view your mistakes?</button>
+            <div class="mistakes">
+                <label for="mistake-btn" class="mistake-button button">Want to view your mistakes?</label>
+                <button class="mistake" id="mistake-btn" style="display: none">Want to view your mistakes?</button>
 
-                    <ul class="mistake-list">
-                        Mistakes: <br>
-                    </ul>
-                </div>
-            </form>
+                <ul class="mistake-list">
+                    Mistakes: <br>
+                </ul>
+            </div>
+        </form>
+
+         <div class="mode-switch">
+            <a href="#" class="switch icon-weather-moon"></a>
+         </div>
+
+    </div>
 
     <script src="js/index.js"></script>
     <script src="js/JSON_loader.js"></script>
+    <script src="js/theme.js"></script>
 </body>
+
 </html>

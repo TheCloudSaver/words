@@ -24,6 +24,6 @@
     padding: 10px 125px;
 } .list_1, .list_2 {
     margin-top: 5px;
-} label {
-    margin-bottom: 10px !important;
+} #lang_1, #lang_2 {
+    margin-top: 5px;
 }
