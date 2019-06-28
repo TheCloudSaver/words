@@ -12,6 +12,7 @@ var download_button = document.querySelector('.download-button');
 var extrarow_button = document.querySelector('.addrows-button');
 
 var exportJSON;
+var tabindex = 6;
 
 lang_primary.addEventListener("input", function (event) {
     event.preventDefault();
@@ -59,9 +60,13 @@ function addRows() {
         node.setAttribute("id", "list_1");
         node.setAttribute("type", "text");
         node.setAttribute("placeholder", "");
+        node.setAttribute("tabindex", tabindex);
 
+        tabindex += 1;
         primary_words.appendChild(node);
     }
+
+    tabindex -= 5;
 
     for (var i = 0; i < 5; i++) {
         var node = document.createElement("INPUT");
@@ -69,7 +74,9 @@ function addRows() {
         node.setAttribute("id", "list_2");
         node.setAttribute("type", "text");
         node.setAttribute("placeholder", "");
-
+        node.setAttribute("tabindex", tabindex);
+        
+        tabindex += 1;
         secondary_words.appendChild(node);
     }
 }
