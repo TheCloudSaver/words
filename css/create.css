@@ -1,0 +1,29 @@
+.create {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+} .info {
+    display: flex;
+    flex-direction: column;
+} .language-input {
+    display: flex;
+    margin-top: -20px;
+} .primary {
+    margin-right: 20px;
+} .list-input {
+    display: flex;
+    margin-top: 20px;
+} .primary-words, .secondary-words {
+    display: flex;
+    flex-direction: column;
+} .langlabel, .namelabel {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 5px;
+} .addrows-button, .download-button {
+    margin-top: 20px;
+    padding: 10px 125px;
+} .list_1, .list_2 {
+    margin-top: 5px;
+} label {
+    margin-bottom: 10px !important;
+}
