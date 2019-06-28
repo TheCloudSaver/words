@@ -14,15 +14,15 @@ var extrarow_button = document.querySelector('.addrows-button');
 var exportJSON;
 var tabindex = 6;
 
-lang_primary.addEventListener("input", function (event) {
-    event.preventDefault();
-    list_primary_label.innerHTML = lang_primary.value;
-});
+// lang_primary.addEventListener("input", function (event) {
+//     event.preventDefault();
+//     list_primary_label.innerHTML = lang_primary.value;
+// });
 
-lang_secondary.addEventListener("input", function (event) {
-    event.preventDefault();
-    list_secondary_label.innerHTML = lang_secondary.value;
-});
+// lang_secondary.addEventListener("input", function (event) {
+//     event.preventDefault();
+//     list_secondary_label.innerHTML = lang_secondary.value;
+// });
 
 download_button.addEventListener("click", function (event) {
     event.preventDefault();
