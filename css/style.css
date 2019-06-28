@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Lato:100,300,400&display=swap');
 
+:root {
+    --theme: #3498db;
+    --primary: #ecf0f1;
+    --white: #ecf0f1;
+    --secondary: #2c3e50;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -7,11 +14,14 @@
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 20px;
+    color: var(--secondary);
 }
 
 body {
-    background-color: #ecf0f1;
+    background-color: var(--primary);
     min-height: 100vh;
+
+    transition: all .2s;
 }
 
 ::-webkit-scrollbar {
@@ -24,7 +34,7 @@ nav {
     height: 5vh;
 
     position: relative;
-    background-color: #3498db;
+    background-color: var(--theme);
 } .nav-content {
     margin: 0 5vw;
     width: 90%;
@@ -43,7 +53,7 @@ nav {
 } .navtab, .hero {
     text-decoration: none;
     font-weight: 300;
-    color: #ecf0f1;
+    color: var(--white);
     line-height: 5vh;
 } .hero {
     font-family: 'Permanent Marker', cursive;
@@ -58,6 +68,7 @@ nav {
     justify-content: center;
 
     text-align: center;
+    position: relative;
 } .test {
     align-items: center;
 } .word {
@@ -66,8 +77,8 @@ nav {
 } .upload {
     cursor: pointer;
 } .upload:hover, .mistake-button:hover, .submit-button:hover, .download-button:hover, .addrows-button:hover {
-    background-color: #3498db;
-    color: #ecf0f1;
+    background-color: var(--theme);
+    color: var(--primary);
     transition: all .25s;
 } .input {
     margin-top: 20px;
@@ -78,9 +89,9 @@ nav {
 } .response {
     text-align: center;
 } .button {
-    border: 1px solid #3498db;
+    border: 1px solid var(--theme);
     border-radius: 3px;
-    background-color: #ecf0f1;
+    background-color: var(--primary);
     padding: 10px 80px;
     text-align: center;
 } .button:not(.response) {
@@ -96,4 +107,18 @@ nav {
 } .mistake-list {
     list-style-type: none;
     font-size: 25px;
+}
+
+.switch {
+    color: var(--primary);
+    background-color: var(--theme);
+    text-decoration: none;
+
+    padding: 15px;
+    border: 1px solid var(--theme);
+    border-radius: 360px;
+
+    right: 50px;
+    bottom: 50px;
+    position: absolute;
 }
