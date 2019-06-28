@@ -41,7 +41,14 @@ function save() {
     var wordlist = [];
 
     for (var i = 1; i < primaryChildNodes.length; i += 2) {
-        wordlist.push({question: primaryChildNodes[i].value, answer: secondaryChildNodes[i].value},);
+        if (primaryChildNodes[i] && primaryChildNodes[i].value) {
+             wordlist.push({
+                 question: primaryChildNodes[i].value,
+                 answer: secondaryChildNodes[i].value
+             }, );
+        } else {
+           console.log("Iteration ended.");
+        }
     }
 
     exportJSON = {
@@ -75,7 +82,7 @@ function addRows() {
         node.setAttribute("type", "text");
         node.setAttribute("placeholder", "");
         node.setAttribute("tabindex", tabindex);
-        
+
         tabindex += 1;
         secondary_words.appendChild(node);
     }
